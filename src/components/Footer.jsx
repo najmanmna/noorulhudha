@@ -63,11 +63,11 @@ export default function Footer() {
                 "Hifz",
                 "Arabic Language",
                 "Tarbiya Classes",
-                "Fiqh, Tafseer & Hadith",
+                "Fiqh, Tafseer & Ahadith",
               ].map((course) => (
                 <li key={course}>
                   <a
-                    href="#"
+                    href="#courses"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
                     {course}
@@ -90,7 +90,8 @@ export default function Footer() {
                 <Facebook className="w-6 h-6" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/noorul_hudha_institute?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
                 className="text-gray-300 hover:text-white transition-colors"
               >
                 <Instagram className="w-6 h-6" />

@@ -1,13 +1,12 @@
-"use client"
-import { useState, useEffect } from "react"
-import herobg1 from "../assets/images/hero_bg1.png"
-import herobg2 from "../assets/images/hero_bg2.png"
-import herobg3 from "../assets/images/hero_bg3.png"
-
+"use client";
+import { useState, useEffect } from "react";
+import herobg1 from "../assets/images/hero_bg1.png";
+import herobg2 from "../assets/images/hero_bg2.png";
+import herobg3 from "../assets/images/hero_bg3.png";
 
 export default function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const slides = [
     {
@@ -37,36 +36,38 @@ export default function Hero() {
       buttonText: "Join the Journey",
       buttonColor: "bg-gray-300 hover:bg-lightgreen",
     },
-  ]
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      nextSlide()
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [currentSlide])
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentSlide]);
 
   const nextSlide = () => {
-    if (isTransitioning) return
-    setIsTransitioning(true)
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setTimeout(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-      setIsTransitioning(false)
-    }, 500)
-  }
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setIsTransitioning(false);
+    }, 500);
+  };
 
   const goToSlide = (index) => {
-    if (isTransitioning || index === currentSlide) return
-    setIsTransitioning(true)
+    if (isTransitioning || index === currentSlide) return;
+    setIsTransitioning(true);
     setTimeout(() => {
-      setCurrentSlide(index)
-      setIsTransitioning(false)
-    }, 500)
-  }
+      setCurrentSlide(index);
+      setIsTransitioning(false);
+    }, 500);
+  };
 
   return (
-  <section id="home" className="relative h-screen bg-gradient-to-br from-amber-50 to-orange-100 overflow-hidden">
-
+    <section
+      id="home"
+      className="relative h-screen bg-gradient-to-br from-amber-50 to-orange-100 overflow-hidden"
+    >
       {/* Background Slides - fade in/out */}
       {slides.map((slide, index) => (
         <div
@@ -97,7 +98,9 @@ export default function Hero() {
             >
               {/* Arabic Text */}
               <div className="mb-6">
-                <span className="text-white text-4xl font-arabic">{slides[currentSlide].arabic}</span>
+                <span className="text-white text-4xl font-arabic">
+                  {slides[currentSlide].arabic}
+                </span>
               </div>
 
               {/* Main Heading */}
@@ -111,6 +114,27 @@ export default function Hero() {
               </p>
 
               <button
+                onClick={() => {
+                  if (slides[currentSlide].buttonText === "Start Reciting") {
+                    // WhatsApp link
+                    window.open("https://wa.me/947XXXXXXXX", "_blank");
+                  } else if (
+                    slides[currentSlide].buttonText === "Explore Courses"
+                  ) {
+                    // Scroll to courses section
+                    document
+                      .getElementById("courses")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  } else if (
+                    slides[currentSlide].buttonText === "Join the Journey"
+                  ) {
+                    // Instagram profile
+                    window.open(
+                      "https://instagram.com/your_instagram_handle",
+                      "_blank"
+                    );
+                  }
+                }}
                 className={`${slides[currentSlide].buttonColor} text-gray-900 font-inter font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform active:scale-95 hover:bg-opacity-90`}
               >
                 {slides[currentSlide].buttonText}
@@ -142,27 +166,29 @@ export default function Hero() {
       <div
         className="absolute inset-0 z-5"
         onTouchStart={(e) => {
-          const touchStart = e.touches[0].clientX
-          e.currentTarget.touchStartX = touchStart
+          const touchStart = e.touches[0].clientX;
+          e.currentTarget.touchStartX = touchStart;
         }}
         onTouchEnd={(e) => {
-          const touchEnd = e.changedTouches[0].clientX
-          const touchStart = e.currentTarget.touchStartX
-          const diff = touchStart - touchEnd
+          const touchEnd = e.changedTouches[0].clientX;
+          const touchStart = e.currentTarget.touchStartX;
+          const diff = touchStart - touchEnd;
 
           if (Math.abs(diff) > 50) {
-            if (diff > 0) nextSlide()
+            if (diff > 0) nextSlide();
             else {
-              if (isTransitioning) return
-              setIsTransitioning(true)
+              if (isTransitioning) return;
+              setIsTransitioning(true);
               setTimeout(() => {
-                setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-                setIsTransitioning(false)
-              }, 500)
+                setCurrentSlide(
+                  (prev) => (prev - 1 + slides.length) % slides.length
+                );
+                setIsTransitioning(false);
+              }, 500);
             }
           }
         }}
       />
     </section>
-  )
+  );
 }
