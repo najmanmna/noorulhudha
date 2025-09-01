@@ -183,7 +183,7 @@ export default function Courses() {
       {/* Modal */}
       {selectedCourse && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-6 relative animate-fadeIn">
+          <div className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-6 relative ">
             {/* Close Button */}
             <button
               onClick={() => setSelectedCourse(null)}
