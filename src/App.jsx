@@ -3,6 +3,7 @@ import "./App.css";
 import About from "./components/About";
 import Courses from "./components/Courses.jsx";
 import CTA from "./components/CTA.jsx";
+import Footer from "./components/Footer.jsx";
 import IslamicAcademyGallery from "./components/Gallery.jsx";
 import Gallery from "./components/Gallery.jsx";
 import Hero from "./components/Hero";
@@ -23,6 +24,7 @@ function App() {
     <CTA />
     <Testimonials />
     <IslamicAcademyGallery />
+    <Footer />
     
     </>
   );

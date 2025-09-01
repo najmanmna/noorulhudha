@@ -44,7 +44,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-br from-amber-50 to-orange-50 relative overflow-hidden">
+    <section id="testimonials" className="py-16 px-4 bg-gradient-to-br from-amber-50 to-orange-50 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-32 h-32 border-2 border-amber-200 rotate-45 transform"></div>

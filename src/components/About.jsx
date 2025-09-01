@@ -2,7 +2,7 @@ import aboutimg from "../assets/images/about_img.png";
 
 export default function About() {
   return (
-    <section className="py-12 px-4 sm:py-16 sm:px-6 bg-gray-50">
+    <section id="about" className="py-12 px-4 sm:py-16 sm:px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-0 items-center">
           {/* Image Section */}
@@ -25,13 +25,14 @@ export default function About() {
                 Founded in 2016 by{" "}
                 <span className="font-semibold text-gray-900">
                   Aalima Bint Nazeer
-                </span>{" "}
-                with small Arabic classes at home, Noorul Hudha Institute has
-                grown into a trusted online platform for Qur'an, Arabic, and
-                Islamic studies. With expert tutors, flexible scheduling, and a
-                focus on sincerity and discipline, we welcome learners of all
-                ages — from kids as young as 4 to adults and reverts seeking
-                knowledge.
+                </span>{""}
+                , who pursued her Islamic studies at the Colombo Institute of
+                Theologians (Ain Institute), Noorul Hudha Institute began with
+                small Arabic classes at home and has since grown into a trusted
+                online platform for Qur’an, Arabic, and Islamic studies. With
+                expert tutors, flexible scheduling, and a focus on sincerity and
+                discipline, we welcome learners of all ages — from kids as young
+                as 4 to adults and reverts seeking knowledge.
               </p>
             </div>
 

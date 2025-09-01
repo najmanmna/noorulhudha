@@ -65,7 +65,7 @@ export default function Hero() {
   }
 
   return (
-  <section className="relative h-screen bg-gradient-to-br from-amber-50 to-orange-100 overflow-hidden">
+  <section id="home" className="relative h-screen bg-gradient-to-br from-amber-50 to-orange-100 overflow-hidden">
 
       {/* Background Slides - fade in/out */}
       {slides.map((slide, index) => (
