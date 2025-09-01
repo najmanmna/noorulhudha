@@ -40,7 +40,7 @@ export default function WhyChooseUs() {
           <p className="text-emerald-600 font-inter font-medium text-sm tracking-wide uppercase mb-4">
             WHY TO CHOOSE US
           </p>
-          <h2 className="text-2xl md:text-3xl font-lexend font-bold text-gray-900 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-lexend font-bold text-gray-900 leading-tight">
             Why Choose Our
             <br />
             Institute

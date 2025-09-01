@@ -4,11 +4,11 @@ import logo from "../assets/images/logo-nobg.png";
 
 export default function CTA() {
   return (
-    <section className="py-12 px-2 sm:px-4 lg:px-6">
+    <section className="py-12 px-2 sm:px-4 lg:px-6 bg-gradient-to-br from-amber-50 to-orange-50 relative overflow-hidden">
       <div className="relative max-w-5xl mx-auto">
-        <img className="absolute inset-0 w-full h-full object-cover z-0" src={cta_bg} alt="" />
+        <img className="absolute inset-0 w-full h-full object-cover z-0 rounded-2xl" src={cta_bg} alt="" />
    {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/20 z-0"></div>
+        <div className="absolute inset-0 bg-black/20 z-0 rounded-2xl"></div>
         <div className="bg-gradient-to-r from-emerald-700 to-amber-400 rounded-2xl p-6 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-4 z-10">
           {/* Left side - Icon and Text */}
           <div className="flex flex-col sm:flex-row z-10 items-center gap-8 flex-1">

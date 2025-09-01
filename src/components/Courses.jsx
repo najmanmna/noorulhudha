@@ -37,7 +37,7 @@ export default function Courses() {
     },
     {
       id: 5,
-      title: "Fiqh, Tafseer & Hadith",
+      title: "Fiqh, Tafseer & Ahadith",
       image: hadithclass,
       description:
         "Gain deeper Islamic knowledge and understanding of the Qur’an & Sunnah.",
