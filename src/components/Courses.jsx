@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp, X } from "lucide-react";
 import quranclass from "../assets/images/quranwiththajweed.jpeg";
 import hifzclass from "../assets/images/hifzcourse.jpg";
-import arabicclass from "../assets/images/learn-arabic.jpg";
+import arabicclass from "../assets/images/learn-arabic.png";
 import tarbiyaclass from "../assets/images/kid-pray.jpg";
 import hadithclass from "../assets/images/hadith.jpg";
 

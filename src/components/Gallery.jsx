@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 // Import images
 import img1 from "../assets/images/quranwiththajweed.jpeg";
 import img2 from "../assets/images/hifzcourse.jpg";
-import img3 from "../assets/images/learn-arabic.jpg";
+import img3 from "../assets/images/learn-arabic.png";
 import img4 from "../assets/images/kid-pray.jpg";
 import img5 from "../assets/images/hadith.jpg";
 

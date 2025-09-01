@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import herobg1 from "../assets/images/hero_bg1.png";
 import herobg2 from "../assets/images/hero_bg2.png";
 import herobg3 from "../assets/images/hero_bg3.png";
+import JoinNowModal from "./JoinNowModal";
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
 
   const slides = [
     {
@@ -17,6 +19,7 @@ export default function Hero() {
         "Step-by-step Qur’an classes designed for children and adults. Build confidence in your recitation while mastering Tajweed rules under expert guidance.",
       buttonText: "Start Reciting",
       buttonColor: "bg-amber-400 hover:bg-amber-500",
+      openModal: true, // open modal instead of WhatsApp
     },
     {
       image: herobg2,
@@ -25,7 +28,8 @@ export default function Hero() {
       description:
         "From beginner-friendly Arabic to Islamic teachings, Duas, and Hifz — Noorul Hudha Institute offers courses tailored for kids, reverts, and lifelong learners.",
       buttonText: "Explore Courses",
-      buttonColor: "bg-lightgreen ehover:bg-white",
+      buttonColor: "bg-lightgreen hover:bg-white",
+      openModal: false, // scroll to section
     },
     {
       image: herobg3,
@@ -35,6 +39,7 @@ export default function Hero() {
         "Founded by Aalima Bint Nazeer, our mission is to nurture souls with authentic Islamic knowledge, flexible learning, and sincere mentorship for every student.",
       buttonText: "Join the Journey",
       buttonColor: "bg-gray-300 hover:bg-lightgreen",
+      openModal: true, // open modal instead of Instagram
     },
   ];
 
@@ -68,7 +73,7 @@ export default function Hero() {
       id="home"
       className="relative h-screen bg-gradient-to-br from-amber-50 to-orange-100 overflow-hidden"
     >
-      {/* Background Slides - fade in/out */}
+      {/* Background Slides */}
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -96,43 +101,28 @@ export default function Hero() {
                   : "opacity-100 translate-x-0"
               }`}
             >
-              {/* Arabic Text */}
               <div className="mb-6">
                 <span className="text-white text-4xl font-arabic">
                   {slides[currentSlide].arabic}
                 </span>
               </div>
 
-              {/* Main Heading */}
               <h1 className="font-lexend text-white text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-6 text-balance">
                 {slides[currentSlide].title}
               </h1>
 
-              {/* Description */}
               <p className="font-inter text-white text-base md:text-base leading-relaxed mb-8 max-w-xl text-pretty">
                 {slides[currentSlide].description}
               </p>
 
               <button
                 onClick={() => {
-                  if (slides[currentSlide].buttonText === "Start Reciting") {
-                    // WhatsApp link
-                    window.open("https://wa.me/947XXXXXXXX", "_blank");
-                  } else if (
-                    slides[currentSlide].buttonText === "Explore Courses"
-                  ) {
-                    // Scroll to courses section
+                  if (slides[currentSlide].openModal) {
+                    setIsModalOpen(true);
+                  } else if (slides[currentSlide].buttonText === "Explore Courses") {
                     document
                       .getElementById("courses")
                       ?.scrollIntoView({ behavior: "smooth" });
-                  } else if (
-                    slides[currentSlide].buttonText === "Join the Journey"
-                  ) {
-                    // Instagram profile
-                    window.open(
-                      "https://instagram.com/your_instagram_handle",
-                      "_blank"
-                    );
                   }
                 }}
                 className={`${slides[currentSlide].buttonColor} text-gray-900 font-inter font-semibold px-6 py-3 rounded-lg text-base transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform active:scale-95 hover:bg-opacity-90`}
@@ -189,6 +179,9 @@ export default function Hero() {
           }
         }}
       />
+
+      {/* Join Now Modal */}
+      {isModalOpen && <JoinNowModal onClose={() => setIsModalOpen(false)} />}
     </section>
   );
 }
