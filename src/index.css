@@ -78,3 +78,6 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .custom-cursor { display: none !important; }
 }
+* {
+  user-select: none;
+}

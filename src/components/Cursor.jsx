@@ -4,8 +4,14 @@ import { motion } from "framer-motion";
 export default function Cursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if screen is mobile (disable cursor)
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -22,16 +28,22 @@ export default function Cursor() {
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseover", handleMouseOver);
-    window.addEventListener("mouseout", handleMouseOut);
+    if (!isMobile) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseover", handleMouseOver);
+      window.addEventListener("mouseout", handleMouseOut);
+    }
 
     return () => {
+      window.removeEventListener("resize", checkScreen);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
       window.removeEventListener("mouseout", handleMouseOut);
     };
-  }, []);
+  }, [isMobile]);
+
+  // Disable cursor on mobile completely
+  if (isMobile) return null;
 
   return (
     <motion.div
@@ -39,13 +51,14 @@ export default function Cursor() {
       animate={{
         x: mousePosition.x - 12,
         y: mousePosition.y - 12,
-        scale: hovering ? 1.5 : 1,
+        scale: hovering ? 1.6 : 1,
         opacity: 1,
       }}
       transition={{
-        type: "tween",
-        duration: 0.15, // faster response
-        ease: "easeOut",
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        mass: 0.2,
       }}
     />
   );
