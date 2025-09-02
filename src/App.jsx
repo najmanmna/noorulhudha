@@ -11,6 +11,7 @@ import Preloader from "./components/Preloader.jsx";
 import Testimonials from "./components/Testimonials.jsx";
 import WeOffer from "./components/WeOffer.jsx";
 import WhyChooseUs from "./components/WhyChooseUs.jsx";
+import Cursor from "./components/Cursor.jsx";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <div className="animate-fadeIn">
+      <Cursor />
       <Navbar />
       <Hero />
       <About />

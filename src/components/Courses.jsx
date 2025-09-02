@@ -108,11 +108,11 @@ export default function Courses() {
       className="py-16 px-4 bg-gradient-to-br from-amber-50 to-orange-50 relative overflow-hidden"
     >
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-amber-300 rotate-45 rounded-lg"></div>
-        <div className="absolute top-32 right-20 w-24 h-24 border-2 border-amber-300 rotate-12 rounded-lg"></div>
-        <div className="absolute bottom-20 left-32 w-28 h-28 border-2 border-amber-300 -rotate-12 rounded-lg"></div>
-        <div className="absolute bottom-32 right-16 w-20 h-20 border-2 border-amber-300 rotate-45 rounded-lg"></div>
+      <div className="absolute inset-0 opacity-5 ">
+        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-amber-900 rotate-45 rounded-lg"></div>
+        <div className="absolute top-32 right-20 w-24 h-24 border-2 border-amber-900 rotate-12 rounded-lg"></div>
+        <div className="absolute bottom-20 left-32 w-28 h-28 border-2 border-amber-900 -rotate-12 rounded-lg"></div>
+        <div className="absolute bottom-32 right-16 w-20 h-20 border-2 border-amber-900 rotate-45 rounded-lg"></div>
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
