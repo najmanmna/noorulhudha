@@ -1,6 +1,6 @@
-import { Facebook, Instagram } from "lucide-react";
-import logo from "../assets/images/logo.jpg";
-import footerbg from "../assets/images/footer-bg.jpg";
+import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
+import logo from '../assets/images/logo.jpg';
+import footerbg from '../assets/images/footer-bg.jpg';
 
 export default function Footer() {
   return (
@@ -84,17 +84,25 @@ export default function Footer() {
             </h3>
             <div className="flex justify-center md:justify-start space-x-4">
               <a
-                href="#"
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a
-                href="https://www.instagram.com/noorul_hudha_institute?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                href="https://www.facebook.com/noorulhudha.institute"
                 target="_blank"
                 className="text-gray-300 hover:text-white transition-colors"
               >
-                <Instagram className="w-6 h-6" />
+                <FaFacebookF className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/noorul_hudha_institute"
+                target="_blank"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                <FaInstagram className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@noorul.hudha.inst?_t=ZS-8zMx5dBVqVe&_r=1"
+                target="_blank"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                <FaTiktok className="w-6 h-6" />
               </a>
             </div>
           </div>
@@ -105,7 +113,6 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-400">
             <div className="text-center md:text-left">
               <p>Noorul Hudha Institute (Pvt) Ltd | Registered in Sri Lanka</p>
-              <p></p>
             </div>
             <div className="text-center">
               <p>&copy; 2025 Noorul Hudha Institute. All rights reserved.</p>

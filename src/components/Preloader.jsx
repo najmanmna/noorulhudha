@@ -25,9 +25,7 @@ export default function Preloader() {
         {/* Orbit ring */}
         <div className="absolute w-32 h-32 border-4 border-amber-400/40 rounded-full animate-spin-slow"></div>
         {/* Star */}
-        <div className="absolute top-0 -right-2 text-amber-500 text-2xl animate-bounce-slow">
-          ★
-        </div>
+      
       </div>
 
       {/* Institute Name */}

@@ -220,14 +220,7 @@ export default function Courses() {
               >
                 Join via WhatsApp
               </a>
-              <a
-                href={selectedCourse.form}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 bg-yellow-500 text-white py-2 px-4 rounded-xl text-center hover:bg-yellow-600 transition"
-              >
-                Register Form
-              </a>
+             
             </div>
           </div>
         </div>

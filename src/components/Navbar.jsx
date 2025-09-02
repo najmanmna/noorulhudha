@@ -2,10 +2,13 @@
 import { useState } from "react";
 import logo from "../assets/images/logo.jpg";
 import JoinNowModal from "./JoinNowModal";
+import TeacherJoinModal from "./TeacherJoinModal"; // ✅ add this
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -47,6 +50,12 @@ export default function Navbar() {
 
             {/* Desktop Join Now Button */}
             <div className="hidden md:flex items-center">
+              <button
+                onClick={() => setIsTeacherModalOpen(true)}
+                className="ml-4 bg-white text-emerald-900 font-inter font-medium px-6 py-2 rounded-lg text-sm transition-colors duration-200"
+              >
+                Join as Teacher
+              </button>
               <button
                 onClick={() => setIsModalOpen(true)}
                 className="bg-amber-400 hover:bg-amber-500 text-gray-900 font-inter font-medium px-6 py-2 rounded-lg text-sm transition-colors duration-200"
@@ -91,7 +100,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden bg-white border-t border-gray-100 shadow-sm">
-            <div className="px-4 pt-4 pb-4 space-y-2">
+            <div className="px-4 pt-4 pb-4 space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link}
@@ -102,6 +111,7 @@ export default function Navbar() {
                   {link}
                 </a>
               ))}
+
               <button
                 onClick={() => {
                   setIsModalOpen(true);
@@ -111,13 +121,25 @@ export default function Navbar() {
               >
                 Join Now
               </button>
+              <button
+                onClick={() => {
+                  setIsTeacherModalOpen(true);
+                  setIsOpen(false);
+                }}
+                className="bg-emerald-50 text-emerald-900 font-inter font-medium px-6 py-2 rounded-lg text-sm transition-colors duration-200 w-full"
+              >
+                Join as Teacher
+              </button>
             </div>
           </div>
         )}
       </nav>
 
-      {/* Global Modal */}
+     {/* Global Modals */}
       {isModalOpen && <JoinNowModal onClose={() => setIsModalOpen(false)} />}
+      {isTeacherModalOpen && (
+        <TeacherJoinModal onClose={() => setIsTeacherModalOpen(false)} />
+      )}
     </>
   );
 }

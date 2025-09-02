@@ -1,4 +1,5 @@
 "use client";
+import { address } from "framer-motion/client";
 import { useState } from "react";
 
 export default function JoinNowModal({ onClose }) {
@@ -6,6 +7,7 @@ export default function JoinNowModal({ onClose }) {
     name: "",
     age: "",
     phone: "",
+    address: "",
     course: "",
   });
 
@@ -21,10 +23,11 @@ export default function JoinNowModal({ onClose }) {
 👤 Name: ${form.name}  
 🎂 Age: ${form.age}  
 📞 Phone: ${form.phone}  
+📍 Address: ${form.address}  
 📖 Course: ${form.course}`;
 
     // Replace with your WhatsApp number (with country code, no + sign)
-    const phoneNumber = "94773285022";
+    const phoneNumber = "94755445855";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
     )}`;
@@ -64,6 +67,15 @@ export default function JoinNowModal({ onClose }) {
             name="phone"
             placeholder="Phone Number"
             value={form.phone}
+            onChange={handleChange}
+            required
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400"
+          />
+          <input
+            type="text"
+            name="address"
+            placeholder="City/Country"
+            value={form.address}
             onChange={handleChange}
             required
             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-400"
