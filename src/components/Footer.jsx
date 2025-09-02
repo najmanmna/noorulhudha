@@ -108,7 +108,7 @@ export default function Footer() {
               </a>
             </div>
              {/* Phone Contact */}
-            <div className="flex flex-col mt-10 gap-2 text-gray-300 text-sm">
+            <div className="flex flex-col mt-10 gap-2 text-gray-300 text-sm items-center md:items-start">
               <a
                 href="tel:+94755445855"
                 className="flex items-center gap-2 hover:text-white transition-colors"
