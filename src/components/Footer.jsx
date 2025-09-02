@@ -1,6 +1,6 @@
-import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
-import logo from '../assets/images/logo.jpg';
-import footerbg from '../assets/images/footer-bg.jpg';
+import { FaFacebookF, FaInstagram, FaTiktok, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import logo from "../assets/images/logo.jpg";
+import footerbg from "../assets/images/footer-bg.jpg";
 
 export default function Footer() {
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Logo Section */}
+          {/* Logo + Contact Section */}
           <div className="flex flex-col items-center md:items-start">
             <div className="bg-white rounded-full p-4 w-28 h-28 flex items-center justify-center mb-4 overflow-hidden">
               <img
@@ -23,7 +23,7 @@ export default function Footer() {
                 className="w-20 h-20"
               />
             </div>
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-left mb-4">
               <span className="font-lexend font-semibold text-white text-sm block">
                 NOORUL HUDHA INSTITUTE
               </span>
@@ -31,6 +31,8 @@ export default function Footer() {
                 QALAM OF ALLAH
               </span>
             </div>
+
+           
           </div>
 
           {/* Links Section */}
@@ -105,6 +107,22 @@ export default function Footer() {
                 <FaTiktok className="w-6 h-6" />
               </a>
             </div>
+             {/* Phone Contact */}
+            <div className="flex flex-col mt-10 gap-2 text-gray-300 text-sm">
+              <a
+                href="tel:+94755445855"
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <FaPhoneAlt className="" /> +94 77 123 4567
+              </a>
+              <a
+                href="https://wa.me/94755445855"
+                target="_blank"
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <FaWhatsapp className="text-xl" /> WhatsApp Us
+              </a>
+            </div>
           </div>
         </div>
 
@@ -126,6 +144,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </footer>   
   );
 }
