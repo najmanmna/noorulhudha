@@ -70,7 +70,7 @@ export default function Testimonials() {
     {
       id: 11,
       rating: 5,
-      text: `It's wonderful sister. Anabya is doing great Alhamdullilah. We're very happy. Sister? Does your company teach Arabic to the elders?`,
+      text: `I really like the way the teacher handled anabya in the starting days...and she learns very quickly with the teacher overall I'm loving your institute and management`,
       signature: "Parent",
     },
   ];

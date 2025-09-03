@@ -113,7 +113,7 @@ export default function Footer() {
                 href="tel:+94755445855"
                 className="flex items-center gap-2 hover:text-white transition-colors"
               >
-                <FaPhoneAlt className="" /> +94 77 123 4567
+                <FaPhoneAlt className="" /> +94 755 445 855
               </a>
               <a
                 href="https://wa.me/94755445855"
