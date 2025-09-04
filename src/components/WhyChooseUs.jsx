@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import prayIcon from "../assets/icons/pray.svg";
 import quranIcon from "../assets/icons/quran.svg";
 import mothersIcon from "../assets/icons/mothers.svg";
@@ -15,7 +16,7 @@ export default function WhyChooseUs() {
       icon: mothersIcon,
       title: "Child-Friendly Approach",
       description: "Fun and easy methods for kids to learn Quran & Duas.",
-      bg: "bg-[#E9F3FF]", // light green (fixed invalid hex)
+      bg: "bg-[#E9F3FF]", // light blue
     },
     {
       icon: worldIcon,
@@ -32,11 +33,33 @@ export default function WhyChooseUs() {
     },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // delay between children
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <section className="py-16 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <p className="text-emerald-600 font-inter font-medium text-sm tracking-wide uppercase mb-4">
             WHY TO CHOOSE US
           </p>
@@ -45,13 +68,20 @@ export default function WhyChooseUs() {
             <br />
             Institute
           </h2>
-        </div>
+        </motion.div>
 
         {/* Features Grid */}
-        <div className="max-w-4xl mx-14 md:mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div
+          className="max-w-4xl mx-14 md:mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={cardVariants}
               className={`${feature.bg} rounded-3xl border border-black py-5 px-5 md:px-4 text-center transition-colors duration-700 ease-in-out hover:[background-image:linear-gradient(90deg,rgb(43,145,85),rgb(167,174,52))] hover:bg-[length:200%_200%] hover:animate-gradient hover:text-white`}
             >
               {/* Icon */}
@@ -72,9 +102,9 @@ export default function WhyChooseUs() {
               <p className="font-inter text-sm leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
