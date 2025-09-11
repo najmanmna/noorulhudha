@@ -1,4 +1,10 @@
-import { FaFacebookF, FaInstagram, FaTiktok, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTiktok,
+  FaPhoneAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
 import logo from "../assets/images/logo.jpg";
 import footerbg from "../assets/images/footer-bg.jpg";
 
@@ -31,8 +37,6 @@ export default function Footer() {
                 QALAM OF ALLAH
               </span>
             </div>
-
-           
           </div>
 
           {/* Links Section */}
@@ -107,7 +111,7 @@ export default function Footer() {
                 <FaTiktok className="w-6 h-6" />
               </a>
             </div>
-             {/* Phone Contact */}
+            {/* Phone Contact */}
             <div className="flex flex-col mt-10 gap-2 text-gray-300 text-sm items-center md:items-start">
               <a
                 href="tel:+94755445855"
@@ -136,14 +140,22 @@ export default function Footer() {
               <p>&copy; 2025 Noorul Hudha Institute. All rights reserved.</p>
             </div>
             <div className="text-center md:text-right">
-              <p>
+              <p className="break-words">
                 Designed & Developed by{" "}
-                <span className="text-emerald-400">Ahamed Web Studio</span>
+                <span className="text-emerald-400">
+                  <a
+                    href="https://www.ahamednajman.me"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ahamed Web Studio
+                  </a>
+                </span>
               </p>
             </div>
           </div>
         </div>
       </div>
-    </footer>   
+    </footer>
   );
 }

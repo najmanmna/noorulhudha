@@ -8,9 +8,12 @@
 @import "swiper/css/pagination";
 @import "swiper/css/autoplay";
 
-
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
 }
 @keyframes spin-slow {
   from {
@@ -44,12 +47,13 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 18px;        /* default size */
+  width: 18px; /* default size */
   height: 18px;
   border-radius: 9999px;
   pointer-events: none;
   transform: translate3d(-50%, -50%, 0) scale(1);
-  transition: background-color 160ms ease, transform 160ms ease, opacity 160ms ease;
+  transition: background-color 160ms ease, transform 160ms ease,
+    opacity 160ms ease;
   z-index: 9999;
   mix-blend-mode: normal;
   will-change: transform, background-color, opacity;
@@ -65,18 +69,24 @@ html {
   position: absolute;
   inset: -6px;
   border-radius: 9999px;
-  border: 2px solid rgba(212,175,55,0.95); /* gold ring */
+  border: 2px solid rgba(212, 175, 55, 0.95); /* gold ring */
   opacity: 0;
   transition: opacity 160ms ease;
 }
-.custom-cursor.--hover .ring { opacity: 1; }
+.custom-cursor.--hover .ring {
+  opacity: 1;
+}
 
 /* hide on touch devices and when user prefers reduced motion */
 @media (hover: none), (pointer: coarse) {
-  .custom-cursor { display: none !important; }
+  .custom-cursor {
+    display: none !important;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .custom-cursor { display: none !important; }
+  .custom-cursor {
+    display: none !important;
+  }
 }
 * {
   user-select: none;
