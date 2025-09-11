@@ -24,7 +24,7 @@ export default function Courses() {
         "Online classes available",
       ],
       whatsapp:
-        "https://wa.me/94775445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Quran%20with%20Tajweed%20course.",
+        "https://wa.me/94755445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Quran%20with%20Tajweed%20course.",
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export default function Courses() {
         "Online classes available",
       ],
       whatsapp:
-        "https://wa.me/94775445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Hifz%20course.",
+        "https://wa.me/94755445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Hifz%20course.",
     },
     {
       id: 3,
@@ -54,7 +54,7 @@ export default function Courses() {
         "Online classes available",
       ],
       whatsapp:
-        "https://wa.me/94775445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Arabic%20Language%20course.",
+        "https://wa.me/94755445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Arabic%20Language%20course.",
     },
     {
       id: 4,
@@ -70,7 +70,7 @@ export default function Courses() {
         "Online classes available",
       ],
       whatsapp:
-        "https://wa.me/94775445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Tarbiya%20Classes.",
+        "https://wa.me/94755445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Tarbiya%20Classes.",
     },
     {
       id: 5,
@@ -85,7 +85,7 @@ export default function Courses() {
         "Online classes available",
       ],
       whatsapp:
-        "https://wa.me/94775445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Fiqh%20Tafseer%20Ahadith%20course.",
+        "https://wa.me/94755445855?text=Assalamu%20Alaikum,%20I%20want%20to%20join%20Fiqh%20Tafseer%20Ahadith%20course.",
     },
   ];
 
