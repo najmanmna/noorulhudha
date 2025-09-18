@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+
+// Pages / Components
 import About from "./components/About";
 import Courses from "./components/Courses.jsx";
 import CTA from "./components/CTA.jsx";
@@ -12,20 +15,9 @@ import Testimonials from "./components/Testimonials.jsx";
 import WeOffer from "./components/WeOffer.jsx";
 import WhyChooseUs from "./components/WhyChooseUs.jsx";
 import Cursor from "./components/Cursor.jsx";
+import ComingSoon from "./pages/workshop.jsx";
 
-function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate preloader duration (2.5s)
-    const timer = setTimeout(() => setLoading(false), 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Preloader />; // show only preloader
-  }
-
+function HomePage() {
   return (
     <div className="animate-fadeIn">
       <Cursor />
@@ -40,6 +32,28 @@ function App() {
       <IslamicAcademyGallery />
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Preloader />;
+  }
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/workshop" element={<ComingSoon />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

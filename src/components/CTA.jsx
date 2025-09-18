@@ -1,6 +1,7 @@
 import { MSquare as Mosque } from "lucide-react";
 import cta_bg from "../assets/images/cta-one_bg.png";
 import logo from "../assets/images/logo-nobg.png";
+import { Link } from "react-router-dom";
 
 export default function CTA() {
   return (
@@ -27,9 +28,11 @@ export default function CTA() {
 
           {/* Right side - Button */}
           <div className="flex-shrink-0 z-10 mt-5 sm:mt-0" >
-            <button className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold font-inter hover:bg-gray-50 transition-colors duration-200 shadow-lg">
-              Coming Soon
-            </button>
+         <Link to="/workshop">
+  <button className="bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold font-inter hover:bg-amber-50 hover:text-green-800 transition-colors duration-200 shadow-lg">
+    Join Now
+  </button>
+</Link>
           </div>
         </div>
       </div>
