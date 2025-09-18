@@ -1,10 +1,12 @@
 import ctaBg from "../assets/images/hero_bg1.png"; // use your flyer-style background if available
 import { Instagram, Facebook } from "lucide-react";
+import Navbar from "../components/Navbar";
 
 export default function Workshop() {
   return (
     <section className="min-h-screen relative flex items-center justify-center px-4 py-12 bg-gradient-to-br from-amber-50 to-orange-50 overflow-hidden">
       {/* Background Image */}
+
       <img
         src={ctaBg}
         alt=""
@@ -88,7 +90,7 @@ export default function Workshop() {
         {/* Footer Info */}
         <div className="mt-12 text-center text-sm text-gray-600">
           <p>📞 +94 755445855</p>
-          <p className="mt-1">🌐 www.noorulhudhainstitute.com</p>
+          <p className="mt-1">🌐 <a href="www.noorulhudhainstitute.com">www.noorulhudhainstitute.com</a></p>
           <div className="flex justify-center gap-6 mt-4 text-gray-700 text-2xl">
             <a
               href="https://instagram.com/noorul_hudha_institute"
