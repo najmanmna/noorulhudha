@@ -90,7 +90,7 @@ export default function Workshop() {
         {/* Footer Info */}
         <div className="mt-12 text-center text-sm text-gray-600">
           <p>📞 +94 755445855</p>
-          <p className="mt-1">🌐 <a href="www.noorulhudhainstitute.com">www.noorulhudhainstitute.com</a></p>
+          <p className="mt-1">🌐 <a href="https://www.noorulhudhainstitute.com">www.noorulhudhainstitute.com</a></p>
           <div className="flex justify-center gap-6 mt-4 text-gray-700 text-2xl">
             <a
               href="https://instagram.com/noorul_hudha_institute"
